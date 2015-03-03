@@ -170,27 +170,31 @@ var appendAvalancheWarning = function (data) {
 };
 
 var addCounter = function (lvlText) {
-  var lvl = '';
+  var lvl, lvlClass;
 
   switch (lvlText) {
-    case "1":
-    case "2":
-      lvl = 1;
+    case '1':
+    case '2':
+      lvl      = 1;
+      lvlClass = 'low';
       break;
 
-    case "3":
-    case "4":
-      lvl = 2;
+    case '3':
+    case '4':
+      lvl      = 2;
+      lvlClass = 'medium';
       break;
 
-    case "5":
-    case "6":
-      lvl = 3;
+    case '5':
+    case '6':
+      lvl      = 3;
+      lvlClass = 'high';
       break;
 
-    case "7":
-    case "8":
-      lvl = 4;
+    case '7':
+    case '8':
+      lvl      = 4;
+      lvlClass = 'high';
       break;
 
     default:
@@ -198,7 +202,7 @@ var addCounter = function (lvlText) {
   }
 
   if (lvl != 0) {
-    $('#toggle-sidebar').append('<span class="counter">' + lvl + '</span>');
+    $('#toggle-sidebar').append('<span class="counter ' + lvlClass + '">' + lvl + '</span>');
   }
 
 };
