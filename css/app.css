@@ -84,6 +84,22 @@ a:hover {
   opacity: 1;
 }
 
+.counter {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  background-color: #c00;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.3)
+}
+
 #header {
   position: relative;
 }

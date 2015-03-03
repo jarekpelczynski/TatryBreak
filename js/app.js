@@ -155,15 +155,52 @@ var getAvalancheWarning = function () {
 };
 
 var appendAvalancheWarning = function (data) {
-  var html = [];
+  var lvlText, html = [];
 
   html[html.length] = '<span class="icon">';
   html[html.length] =   '<img src="http://tpn.pl/' + data.icon +'">';
   html[html.length] = '</span>';
   html[html.length] = data.text;
 
+  lvlText = data.icon.match(/\d+/g);
+
+  addCounter(lvlText[0]);
 
   $('#avalanches-warning').find('a').html(html.join('\t'));
+};
+
+var addCounter = function (lvlText) {
+  var lvl = '';
+
+  switch (lvlText) {
+    case "1":
+    case "2":
+      lvl = 1;
+      break;
+
+    case "3":
+    case "4":
+      lvl = 2;
+      break;
+
+    case "5":
+    case "6":
+      lvl = 3;
+      break;
+
+    case "7":
+    case "8":
+      lvl = 4;
+      break;
+
+    default:
+      lvl = 0;
+  }
+
+  if (lvl != 0) {
+    $('#toggle-sidebar').append('<span class="counter">' + lvl + '</span>');
+  }
+
 };
 
 var getVersion = function () {
