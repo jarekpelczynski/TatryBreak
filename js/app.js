@@ -157,6 +157,11 @@ var getAvalancheWarning = function () {
 var appendAvalancheWarning = function (data) {
   var lvlText, html = [];
 
+  if ( data.icon.match(/\d+/g)[0] === "0") {
+    $('#avalanches-warning').remove();
+    return;
+  }
+
   html[html.length] = '<span class="icon">';
   html[html.length] =   '<img src="http://tpn.pl/' + data.icon +'">';
   html[html.length] = '</span>';
