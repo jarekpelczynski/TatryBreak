@@ -110,13 +110,24 @@ var appendTemp = function (degrees) {
   });
 };
 
+function insertPreview (data) {
+    var newHTMLDocument = document.implementation.createHTMLDocument('preview');
+    var el = newHTMLDocument.createElement('div').innerHTML = data;
+    var $pageHTML = $(el);
+    var $pageHero = $pageHTML.find('.page-section--hero');
+    $('.page--next').append($pageHero);
+}
+
 var fetchAvalancheWarning = function () {
   console.log('Fetch avalanche warning');
 
-  $('#tmp').load('http://tpn.pl/zwiedzaj/komunikat-lawinowy .degree', function (response, status, xhr) {
-    var data = {};
+  var newHTMLDocument, tempHTML;
 
-    $('#tmp').html('');
+  newHTMLDocument = document.implementation.createHTMLDocument('preview');
+  tempHTML = newHTMLDocument.createElement('html')
+
+  $(tempHTML).load('http://tpn.pl/zwiedzaj/komunikat-lawinowy', function (response, status, xhr) {
+    var data = {};
 
     response = $(response).find('p.degree');
 
