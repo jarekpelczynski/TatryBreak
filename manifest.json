@@ -1,7 +1,7 @@
 {
   "name": "Tatrrace",
   "manifest_version": 2,
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description" :"Aktualny podgląd na warunki pogodowe w Tatrach w nowej zakładce",
   "author": "Jarek Pelczynski",
 
@@ -16,7 +16,7 @@
   },
 
   "permissions": [
-    "http://www.test.tatrynet.pl/*",
+    "http://www.pogoda.tatrynet.pl/*",
     "http://tpn.pl/*",
     "http://www.yr.no/*",
     "storage"

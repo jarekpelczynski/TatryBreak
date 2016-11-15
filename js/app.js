@@ -64,7 +64,7 @@ var preloadCameras = function () {
 };
 
 var loadConditions = function () {
-  var url = "http://www.test.tatrynet.pl/pogoda/weatherMiddleware_v1.0/xml/lokalizacje1.xml";
+  var url = "http://www.pogoda.tatrynet.pl/pogoda/weatherMiddleware_v1.0/xml/lokalizacje1.xml?_=" + new Date().getTime();
 
   var degrees = { 'gor': {}, 'ps': {}, 'mo': {} };
 
